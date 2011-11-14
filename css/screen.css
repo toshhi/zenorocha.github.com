@@ -28,17 +28,21 @@ body {
 }
 
 a, a:link, a:visited, a:active, .title, .category {
+	text-decoration: none;
+}
+
+article, section {
 	padding: 1%;
 	float: left;
-	width: 100%;
 	height: auto;
 	text-decoration: none;
 	z-index: 2;
+	display: block;
 }
 
 h1, h2, h3 { font-size: 3em; }
 
-h1 {
+h1 a {
 	color: #6d7486;
 	line-height: 1.1;
 	letter-spacing: -0.05em;
@@ -63,17 +67,17 @@ p {
 	color: #999fb2;
 }
 
-small {
+a {
 	font-size: 1em; 
 	color: #4183C4;
 }
 
 img { max-width: 100%; }
 
-#github {
+footer {
 	position: fixed;
-	bottom: 0;
-	right: 10px;
+	bottom: -5px;
+	right: 20px;
 	z-index: 1;
 }
 
@@ -82,31 +86,40 @@ img { max-width: 100%; }
 /* Column Control Media Queries */
 
 @media screen and (min-width:500px) {
+	
 	body {
 		max-width: 1600px;
 		margin: 0 auto;
 		padding: 40px;
 		overflow: hidden;
 	}
-	a {
+
+	article {
 		-webkit-transition: background-color .3s linear;
 		-moz-transition: -color .3s linear;
 		transition: background-color .3s linear;
 	}
-	a:hover { background-color: #e5e4cf; }
-	a.title:hover { background-color: #eef3f7; }
-	a, a:link, a:visited, a:active, .title, .category {
+	
+	article:hover { 
+		background-color: #eef3f7; 
+	}
+	
+	article, section {
 		position: relative;
 		top: 0;
 		overflow: hidden;
 	}
-	div, h2 { position: absolute; }
+
+	div, h2 { 
+		position: absolute; 
+	}
+
 }
 
 /* Two Column */
 
 @media screen and (min-width:500px) {
-	a, a:link, a:visited, a:hover, a:active, .title, .category {
+	article, section {
 		width: 47%;
 		margin: 0 3% 20px 0;
 		padding-bottom: 47%;
@@ -116,7 +129,7 @@ img { max-width: 100%; }
 /* Three Column */
 
 @media screen and (min-width:800px) {
-	.title, .category, a, a:link, a:visited, a:hover, a:active {
+	article, section {
 		width: 31%;
 		margin: 0 2% 20px 0;
 		padding-bottom: 31%;
@@ -126,10 +139,10 @@ img { max-width: 100%; }
 /* Four Column */
 
 @media screen and (min-width:1200px) {
-	.title, .category, a, a:link, a:visited, a:hover, a:active {
+	article, section {
 		width: 21%;
 		margin: 20px 2% 0 0;
-		padding-bottom: 21%;
+		padding-bottom: 5%;
 	}
 }
 
